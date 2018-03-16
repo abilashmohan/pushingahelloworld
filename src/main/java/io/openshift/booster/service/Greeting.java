@@ -15,19 +15,32 @@
  */
 package io.openshift.booster.service;
 
+import java.util.Date;
+
 public class Greeting {
 
     private final String content;
+    private String timeStamp;
+
+    private void setTimeStamp() {
+        timeStamp = new Date(System.currentTimeMillis()).toString();
+    }
 
     public Greeting() {
         this.content = null;
+        setTimeStamp();
     }
 
     public Greeting(String content) {
         this.content = content;
+        setTimeStamp();
     }
 
     public String getContent() {
         return content;
+    }
+
+    public String getTimeStamp(){
+        return timeStamp;
     }
 }
